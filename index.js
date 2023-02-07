@@ -1,12 +1,13 @@
 
-{let nombre = prompt("Ingresa tu nombre");
+let nombre = prompt("Ingresa tu nombre");
 let respuestaNombre = `Bien ${nombre}, comencemos con las cuentas!`;
 alert(respuestaNombre)
-}
 
+let cancelar;
 
+while(cancelar != false) {
 function calculadora(numero1, numero2, operacion){
-    
+        
     switch(operacion) {
     case "+":
     return numero1 + numero2;
@@ -27,8 +28,7 @@ function calculadora(numero1, numero2, operacion){
     default:
         return "operacion no definida";
         break;
-    }
-   
+    } 
 }
 
 let numeroUno = parseInt(prompt("Ingrese el primer número"));
@@ -37,4 +37,6 @@ let op = prompt("ingrese la operacion a realizar: +, -, *, /");
 
 let resultado = calculadora(numeroUno, numeroDos, op);
 let mensaje = `El resultado de la operacion es: ${resultado}`;
-alert(mensaje);
+alert(mensaje)
+cancelar = confirm('Para finalizar ingrese "cancelar"')
+}
